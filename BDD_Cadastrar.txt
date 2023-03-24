@@ -1,0 +1,151 @@
+	
+	Cenário Feliz
+Dado	Que vou cadastrar uma categoria
+quando	insiro um nome com ate 128 caracteres e salvo
+entao	terei uma nova categoria cadastrada.
+	
+	
+	
+	Cenário de erro
+Dado	Que vou cadastrar uma categoria
+quando	escolho e insiro uma palavra que exceda 128 caractteres
+entao	terei uma mensagem de erro
+	
+	
+	
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro uma categoria com númeors somente 
+entao	verei uma mensagem de erro
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro uma categoria com númeors e caracteres
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Escrevo o nome mas não coloco data e hora
+entao	verei uma mensagem de erro
+	
+	
+	
+	Cenário Feliz
+Dado	Que vou cadastrar uma categoria
+quando	escolho somente letras do alfabeto insiro o nome e salvo
+entao	terei uma nova categoria cadastrada.
+	
+	
+	
+	Cenário de erro
+Dado	Que vou cadastrar uma categoria
+quando	Escolho letras e números insiro este nome e  clico em salvar
+entao	terei uma mensagem de erro
+	
+	
+	
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro somente caracteres.
+entao	terei uma mensagem de erro
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	coloco somente o nome da categoria e clico em salvar
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Apenas prossigo sem inserir qualquer informação
+entao	verei uma mensagem de erro
+	
+	
+	
+	
+	
+	
+	
+	Cenário Feliz
+Dado	Que vou cadastrar uma categoria
+quando	já cadastrei um nome válido e ativo o status
+entao	Terei um status Ativo com sucesso
+	
+	
+	
+	Cenário de erro
+Dado	Que vou cadastrar uma categoria
+quando	já cadastrei um nome válido, não ativei meu status e cliquei em prosseguir
+entao	Terei uma mensagem de erro.
+	
+	
+	
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	insiro uma data inexistente
+entao	trei uma mensagem de erro
+	
+		
+	Cenário Feliz
+Dado	Que vou cadastrar uma categoria
+quando	Inseri um nome valido, data e hora e ativei meu status
+entao	Terei um status Ativo com sucesso
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
