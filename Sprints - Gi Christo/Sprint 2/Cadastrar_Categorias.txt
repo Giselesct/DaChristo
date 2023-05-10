@@ -1,0 +1,68 @@
+	BDD-Cadastrar Categorias
+
+
+	Cenário de erro
+Dado	Que vou cadastrar uma categoria
+quando	escolho e insiro uma palavra que exceda 128 caractteres
+entao	terei uma mensagem de erro
+	
+	
+	
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro uma categoria com númeors somente 
+entao	verei uma mensagem de erro
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro uma categoria com númeors e caracteres
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Escrevo o nome mas não coloco data e hora
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Coloco letras e caracteres.
+entao	verei uma mensagem de erro
+	
+	
+	Cenário de erro
+Dado	Que vou cadastrar uma categoria
+quando	Escolho letras e números insiro este nome e  salvo
+entao	terei uma mensagem de erro
+	
+	
+	
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Insiro somente caracteres.
+entao	terei uma mensagem de erro
+	
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	coloco somente o nome da categoria e salvo
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	Apenas prossigo sem inserir qualquer informação
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	cadastro duas categorias
+entao	verei uma mensagem de erro
+	
+	Cenário erro
+Dado	Que vou cadastrar uma categoria
+quando	insiro uma data inexistente
+entao	trei uma mensagem de erro
