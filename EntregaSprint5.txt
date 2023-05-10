@@ -1,0 +1,61 @@
+************************************************************
+adicionando dados Categoria
+INSERT INTO categoria (
+Idcateg, Nome_categoria,Status)  VALUES
+(01,'Vestuario', 1 );
+
+select * from categoria;
+************************************************
+UPDATE categoria SET Nome_categoria = 'Calçados'
+WHERE   Idcateg = '1';
+select * from categoria;
+*****************************************************
+Excluindo dados:
+
+delete from categoria where Idcateg = '1' ;
+select * from categoria;
+
+
+/////////////////////////////////////////////////////////////
+
+
+INSERT INTO subcategoria (
+Idsubcateg,Nome_categoria, Nome_subcategoria, Status)  VALUES
+(01,'Vestuario','masculino', 1 );
+
+Alterando dados: lembrar semmpre de realizar as mesmas alterações na pk
+
+UPDATE categoria SET Nome_categoria = 'Calçados'
+WHERE   Idcateg = '1';
+select * from categoria;
+
+UPDATE subcategoria SET Nome_categoria = 'Calçados'
+WHERE   Idsubcateg = '1';
+select * from categoria;
+
+select * from subcategoria;
+
+
+*******************************************************
+delete from subcategoria where Idsubcateg = '1' ;
+select * from subcategoria;
+posso deletar ela primeiro por ser filha
+
+////////////////////////////////////////////////////////////
+
+
+INSERT INTO produto (
+Produto, Nome_categoria, Nome_subcategoria, Status)  VALUES
+('Camiseta','Vestuario','masculino', 1 );
+
+select * from produto;
+********************************************************
+UPDATE produto SET Produto = 'Blusa'
+WHERE  Id_prod = '1';
+select * from produto;
+*******************************************************
+
+delete from produto where Id_prod = '1' ;
+select * from produto;
+
+
