@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "c28c952a-c6c8-4c87-bcae-ff0691fefdfc",
+		"name": "Pesquisar Categorias- Rick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Pesquisar Categoria respeitando os critérios de aceite",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excedendo o limite de caracteres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?nome=gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não colocando o minimo de 3 caracteres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?nome=er",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "er"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando algo diferente de  categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?nome=cachorro",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "cachorro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem crescente.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?Ordem=c",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem decrescente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?Ordem=d",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar com filtros diferentes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7296/Categoria/?Ordem=c&Status=T",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7296",
+					"path": [
+						"Categoria",
+						""
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						},
+						{
+							"key": "Status",
+							"value": "T"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
