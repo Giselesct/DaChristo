@@ -20,3 +20,27 @@ WHERE  Id = 'd948cd8c-0b2c-4c19-9453-9aa0efa643fc';
 Para remover dados:
 
 delete from categorias where Id= 'e1fa5d37-01b1-4d31-9211-91cfdd7def76' ;
+
+
+**********************************************************
+
+Comandos da Mari
+
+select* from categorias;
+
+
+Inserir dados
+INSERT INTO categorias (
+Id, Nome, Status, DataCriacao,DataModificacao)  VALUES
+("8",'Jogos', 1,current_timestamp(),current_timestamp());
+
+
+
+Alterar dados
+
+UPDATE categorias SET Nome = 'Nenem'
+WHERE  Id = '5';
+
+
+Excluir dados
+delete from categorias where Id= '6' ;
