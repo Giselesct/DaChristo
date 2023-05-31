@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "1924e91f-ab55-424d-88f3-f7fa148c7e50",
+		"name": "Pesquisar Categorias  Mariana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Pesquisar Categoria respeitando os critérios de aceite",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaTodos ",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaTodos "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excedendo o limite de caracteres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaFiltro?nome= gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaFiltro"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": " gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não colocando o minimo de 3 caracteres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaFiltro?nome=da",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaFiltro"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "da"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem crescente.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaFiltro?crescente=true",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaFiltro"
+					],
+					"query": [
+						{
+							"key": "crescente",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem decrescente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaFiltro?decrescente=true",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaFiltro"
+					],
+					"query": [
+						{
+							"key": "decrescente",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar com filtros diferentes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7161/Categoria/PesquisaFiltro?decrescente=false&status=true",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7161",
+					"path": [
+						"Categoria",
+						"PesquisaFiltro"
+					],
+					"query": [
+						{
+							"key": "decrescente",
+							"value": "false"
+						},
+						{
+							"key": "status",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
