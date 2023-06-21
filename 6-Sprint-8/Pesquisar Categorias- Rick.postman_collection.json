@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "c28c952a-c6c8-4c87-bcae-ff0691fefdfc",
+		"name": "Pesquisar Categorias- Rick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Pesquisar Categoria respeitando os critérios de aceite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}",
+					"host": [
+						"{{BaseURLRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excedendo o limite de caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"A pesquisa não pode conter mais de 128 caracteres.\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}?nome=gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não colocando o minimo de 3 caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"A pesquisa não pode conter menos de 3 caracteres.\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}?nome=er",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "er"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem crescente.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"\r",
+							"  \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}?Ordem=c",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem decrescente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"\r",
+							"  \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}?Ordem=d",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar com filtros diferentes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"\r",
+							"  \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLRick}}?Ordem=c&Status=T",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						},
+						{
+							"key": "Status",
+							"value": "T"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

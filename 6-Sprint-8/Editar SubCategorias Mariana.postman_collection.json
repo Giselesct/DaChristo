@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "3595dadc-e470-4564-bfc5-3af17cb9310e",
+		"name": "Editar SubCategorias Mariana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Excedendo o limite de caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O campo deve conter até 128 caracteres\");\r",
+							"});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Nome\": \"gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd\",\r\n  \"status\": true,\r\n  \"dataCriacao\": \"2023-06-16T16:12:13.521Z\",\r\n  \"categoriaId\":\"19\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategMari}}2",
+					"host": [
+						"{{URLSubcategMari}}2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando caracteres especiais.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O campo deve conter apenas caracteres do alfabeto.\");\r",
+							"});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"&&¨%$$#\",\r\n  \"status\": true,\r\n  \"dataCriacao\": \"2023-06-16T16:12:13.521Z\",\r\n  \"categoriaId\":\"19\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategMari}}2",
+					"host": [
+						"{{URLSubcategMari}}2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando números",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O campo deve conter apenas caracteres do alfabeto.\");\r",
+							"});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"6655443332\",\r\n  \"status\": true,\r\n  \"dataCriacao\": \"2023-06-16T16:12:13.521Z\",\r\n  \"categoriaId\":\"19\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategMari}}2",
+					"host": [
+						"{{URLSubcategMari}}2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editando Normalmente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Camiseta tecido grosso\",\r\n  \"status\": true,\r\n  \"dataCriacao\": \"2023-06-16T16:12:13.521Z\",\r\n  \"categoriaId\":\"19\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategMari}}5",
+					"host": [
+						"{{URLSubcategMari}}5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

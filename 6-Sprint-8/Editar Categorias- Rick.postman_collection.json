@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "0d70cd25-b133-45d3-bb11-8d4ab39a2a34",
+		"name": "Editar Categorias- Rick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Excedendo o limite de caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não pode conter mais de 128 caracteres.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd\",\r\n\t\"Status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLRick}}/094db0c9-ab43-4896-94b1-478228f56e77",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"path": [
+						"094db0c9-ab43-4896-94b1-478228f56e77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando caracteres especiais.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não aceita caracteres especiais.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"&&¨%$$#\",\r\n\t\"Status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLRick}}/094db0c9-ab43-4896-94b1-478228f56e77",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"path": [
+						"094db0c9-ab43-4896-94b1-478228f56e77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando números",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não aceita caracteres especiais.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"6655443332\",\r\n\t\"Status\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLRick}}/094db0c9-ab43-4896-94b1-478228f56e77",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"path": [
+						"094db0c9-ab43-4896-94b1-478228f56e77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editando normalmente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\" :\"Brinquedos grandoes g\",\r\n\t\"Status\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLRick}}/094db0c9-ab43-4896-94b1-478228f56e77",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"path": [
+						"094db0c9-ab43-4896-94b1-478228f56e77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inativando Categoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Nome\": \"Brinquedos Grandes\",\r\n\t\"Status\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLRick}}/d754cd8c-0b2c-4c19-9196-9aa0efa163fc",
+					"host": [
+						"{{BaseURLRick}}"
+					],
+					"path": [
+						"d754cd8c-0b2c-4c19-9196-9aa0efa163fc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

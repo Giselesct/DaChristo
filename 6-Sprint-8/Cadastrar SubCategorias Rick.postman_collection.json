@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "38ce810f-1e07-49ec-8269-4c42cb7871a7",
+		"name": "Cadastrar SubCategorias Rick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Cadastrando uma subcategoria corretamente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CategoriaId\": \"35e00583-e10f-4f1f-9777-1134cb441ff4 \",\r\n    \"Nome\": \"Bem leve\",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excedendo o limite de caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não pode conter mais de 128 caracteres.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\":\"gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd\",\r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc \",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\"\r\n\r\n\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando caracteres especiais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não aceita caracteres especiais.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nome\":\"&&**&&\",\r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc \",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\"\r\n\r\n\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utilizando números",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome não aceita caracteres especiais.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\":  \"223443333\",\r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc \",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserindo subcategoria com nome já cadastrado.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O nome cadastrado já existe.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nome\": \"Brinquedos\",\r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc \",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inserir subcategoria com o mesmo nome de categoria cadastrada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Subcategoria contem o mesmo nome de categoria cadastrada.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc \",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\",\r\n    \"Nome\": \"Calor  \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrando em categoria inativa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"A categoria está inativa e não pode receber novos cadastros. Ative a categoria para cadastrar uma subcategoria.\");\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"CategoriaId\": \"d754cd8c-0b2c-4c19-9196-9aa0efa163fc\",\r\n   \"status\": true,\r\n   \"dataEHoraCriacao\": \"2023-06-16T16:55:23.963Z\",\r\n    \"Nome\": \"Caminhao Areia \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "b196b46d-28b1-4675-9501-d0edb1017215",
+		"name": "Pesquisar SubCategorias Rick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27453442"
+	},
+	"item": [
+		{
+			"name": "Pesquisar subcategoria respeitando os critérios de aceite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}",
+					"host": [
+						"{{URLSubcategRick}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excedendo o limite de caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include( \"A pesquisa não pode conter mais de 128 caracteres.\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?nome=gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "gieuedjdjdkdkkkdkdkdkgkskgsjgsgçsgksdgmsfbladlçbfslblsfblsflsfblsflçbsfkçbçsfbmsflbsflvslbslvlsfvlmsfvadvsfvvfvlçsfvsdvfvsddlvsdd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não colocando o minimo de 3 caracteres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"A pesquisa não pode conter menos de 3 caracteres.\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?nome=er",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "er"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem crescente.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"pm.test(\"Validando o texto esperado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"O campo deve conter até 128 caracteres\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?Ordem=c",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisando em ordem decrescente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?Ordem=d",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar com filtros diferentes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?Ordem=c&Status=T",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "Ordem",
+							"value": "c"
+						},
+						{
+							"key": "Status",
+							"value": "T"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Definindo quantos registros exibir por página ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Para validar o status code\r",
+							"\r",
+							"pm.test(\"Validando o Status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"//validação correta do texto string 2000 milisegundos\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"\r",
+							"\r",
+							"//validação para ver se apresenra a mensagem que ultrapassou o limite de caracteres\r",
+							"  \r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLSubcategRick}}?registros=3",
+					"host": [
+						"{{URLSubcategRick}}"
+					],
+					"query": [
+						{
+							"key": "registros",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
