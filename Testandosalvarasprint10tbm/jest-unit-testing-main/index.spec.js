@@ -20,7 +20,17 @@ it('calcula comissão quando só tem um item na lista', () => {
 
   expect(resultadoAtual).toBe(resultadoEsperado)
 })
+//inserido pela gi 5%
+it('calcula comissão quando só tem um item na lista', () => {
+  const resultadoAtual = calculaComissaoDeVenda([{
+    id: 'PROD-123',
+    precoUnitario: 900,
+    quantidadeVendida: 1
+  }])
+  const resultadoEsperado = 45
 
+  expect(resultadoAtual).toBe(resultadoEsperado)
+})
 it('calcula comissão quando há mais de um item na lista', () => {
   const resultadoAtual = calculaComissaoDeVenda([
     {
@@ -39,6 +49,25 @@ it('calcula comissão quando há mais de um item na lista', () => {
   expect(resultadoAtual).toBe(resultadoEsperado)
 })
 
+//feito pela gi 
+
+it('calcula comissão quando há mais de um item na lista', () => {
+  const resultadoAtual = calculaComissaoDeVenda([
+    {
+      id: 'PROD-123',
+      precoUnitario: 800,
+      quantidadeVendida: 1
+    },
+    {
+      id: 'PROD-456',
+      precoUnitario: 200,
+      quantidadeVendida: 5
+    }
+  ])
+  const resultadoEsperado = 90
+
+  expect(resultadoAtual).toBe(resultadoEsperado)
+})
 it('calcula comissão de 10%', () => {
     const resultadoAtual = calculaComissaoDeVenda([{
     id: 'PROD-789',
@@ -94,7 +123,7 @@ it('calcula comissão especial para o produto XP-0101', () => {
   expect(resultadoAtual).toBe(resultadoEsperado)
 })
 
-//inserido pela gi
+//inserido pela gi calculo de 20%
 it('calcula comissão especial para o produto XP-0101', () => {
   const resultadoAtual = calculaComissaoDeVenda([
     {
