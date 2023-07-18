@@ -103,7 +103,16 @@ it('calcula comissão de 15%', () => {
   expect(resultadoAtual).toBe(resultadoEsperado)
 })
 
+//inserido pela gi mais de 7000
+it('calcula comissão de mais de 7000', () => {
+  const resultadoAtual = calculaComissaoDeVenda([{
+  id: 'PROD-789',
+  precoUnitario: 8000,
+  quantidadeVendida: 4
+}])
+const resultadoEsperado = 16300
 
+})
 
 it('calcula comissão especial para o produto XP-0101', () => {
   const resultadoAtual = calculaComissaoDeVenda([
