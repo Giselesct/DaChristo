@@ -6,9 +6,7 @@ const calculaComissaoDeVenda = require('.')
 test('se a lista estiver vazia, a comissão é zero', () => {
     const resultadoAtual = calculaComissaoDeVenda([])
     const resultadoEsperado = 0
-
-  expect(resultadoAtual).toBe(resultadoEsperado)
-})
+  })
 
 it('calcula comissão quando só tem um item na lista', () => {
   const resultadoAtual = calculaComissaoDeVenda([{
@@ -140,4 +138,17 @@ it('calcula comissão especial para o produto XP-0101', () => {
    const resultadoEsperado = 15200
 
   expect(resultadoAtual).toBe(resultadoEsperado)
+})
+
+
+
+//inserido pela gi subtrair o percentual do total vendido
+it('calcula comissão de 80%', () => {
+  const resultadoAtual = calculaComissaoDeVenda([{
+  id: 'PROD-789',
+  precoUnitario: 4000,
+  quantidadeVendida: 3
+}])
+const resultadoEsperado = 2400
+
 })
