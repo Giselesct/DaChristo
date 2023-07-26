@@ -1,4 +1,4 @@
-//ainda nao rodei o codigo com esta função colocando usuarios
+//ja  rodei o codigo com esta função colocando usuarios e esta ok
 
 import http from 'k6/http';
 //import { check, sleep } from 'k6';
