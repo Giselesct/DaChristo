@@ -10,26 +10,28 @@ export const options = {
   ],
 };
 
-//função para inserir Categorias
+//função para inserir ct
 export default function () {
-  const url = 'https://localhost:7296/Categoria';
+  const url = ('https://localhost:7296/CentroDeDistribuicao');
   
   const payload = JSON.stringify({
-    "id": "d948cd8c-0b2c-4c19-9453-9aa0efa643fb",
-    "nome": "Criativa",
-    "status": true,
-    "criacao": "25/07/2023 19:16:37",
-    "modificacao": "Não houve modificações."
-  
+    "nome":"Gigialeluia",
+    "complemento": "pertomarçalo",
+    "cep":"06132290",
+    "numero":26,
+    "dataEHoraCriacao": "2023-07-28T30:15:20.392Z"
+
   });
 
   const params = {
     headers: {
       'Content-Type': 'application/json',
+      
     },
   };
 
   http.post(url, payload, params);
+ 
 }
 
 

@@ -10,7 +10,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('https://localhost:7296/Categoria');
+  const res = http.get('https://localhost:7161/Categoria');
   check(res, { 'status was 200': (r) => r.status == 200 });
   sleep(1);
 }
