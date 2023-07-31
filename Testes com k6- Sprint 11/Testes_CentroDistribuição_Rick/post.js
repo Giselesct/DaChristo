@@ -15,11 +15,10 @@ export default function () {
   const url = ('https://localhost:7296/CentroDeDistribuicao');
   
   const payload = JSON.stringify({
-    "nome":"Gigialeluia",
+    "nome": "Gigialeluia",
     "complemento": "pertomarçalo",
-    "cep":"06132290",
-    "numero":26,
-    "dataEHoraCriacao": "2023-07-28T30:15:20.392Z"
+    "cep": "06132290",
+    "numero": 26,
 
   });
 
@@ -31,7 +30,8 @@ export default function () {
   };
 
   http.post(url, payload, params);
- 
+
+  
 }
 
 
