@@ -4,8 +4,8 @@ import http from 'k6/http';
 
 export const options = {
   stages: [
-   { duration: '10s', target: 20 },
-    { duration: '1m', target: 10 },
+    { duration: '10s', target: 3 },
+    { duration: '1m', target: 2 },
     { duration: '5s', target: 0 },
   ],
 };
@@ -24,10 +24,10 @@ export default function () {
     "comprimento": 90.9,
     "valor": 40,
     "quantidadeEmEstoque": 50,
-    "centroDeDistribuicaoId": "c95c8a40-7a73-4a09-9e07-b95875285471",
+    "centroDeDistribuicaoId": "5",
     "status": true,
     "dataEHoraCriacao": "2023-07-27T01:48:55.820Z",
-    "subcategoriaId": "7bdcb488-342c-4c54-a989-2a4218955303"
+    "subcategoriaId": "5"
   });
 
   const params = {
