@@ -15,7 +15,7 @@ export default function () {
   const url =  'https://localhost:7161/Produto';
   const payload = JSON.stringify({
     
-    "id": "2qa85f64-5717-4562-b3fc-2c963f66afa6",
+    "id": "46",
     "nome": "Blusinha da Gi",
     "descricao": "Pequena",
     "peso": 27.0,
