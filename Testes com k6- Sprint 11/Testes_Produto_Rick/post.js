@@ -10,7 +10,7 @@ export const options = {
   ],
 };
 
-//função para inserir Produtos
+//função para inserir Produtos- não sera executado po rerro de proxy com viacep que não foi resolvido pelo TI.
 export default function () {
   const url = 'https://localhost:7296/Produto';
   const payload = JSON.stringify({

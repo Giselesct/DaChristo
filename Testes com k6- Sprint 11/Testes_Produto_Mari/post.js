@@ -10,21 +10,20 @@ export const options = {
   ],
 };
 
-//função para inserir Produtos
+//função para inserir Produtos não sera executado po rerro de proxy com viacep que não foi resolvido pelo TI.
 export default function () {
   const url =  'https://localhost:7161/Produto';
   const payload = JSON.stringify({
     
-    "id": "46",
     "nome": "Blusinha da Gi",
     "descricao": "Pequena",
-    "peso": 27.0,
-    "altura": 34.0,
-    "largura": 35.0,
-    "comprimento": 90.9,
+    "peso": 27,
+    "altura": 34,
+    "largura": 35,
+    "comprimento": 90,
     "valor": 40,
     "quantidadeEmEstoque": 50,
-    "centroDeDistribuicaoId": "5",
+    "centroDeDistribuicaoId": "1",
     "status": true,
     "dataEHoraCriacao": "2023-07-27T01:48:55.820Z",
     "subcategoriaId": "5"

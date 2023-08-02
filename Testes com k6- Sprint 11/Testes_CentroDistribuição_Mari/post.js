@@ -10,19 +10,23 @@ export const options = {
   ],
 };
 
-//função para inserir ct
+//função para inserir ct- não sera executado po rerro de proxy com viacep que não foi resolvido pelo TI.
 export default function () {
   const url = ('https://localhost:7161/CentroDistribuicao');
   
   const payload = JSON.stringify({
     
-      "nome": "Christo S/A",
-      "numero": 26,
-      "complemento": "Perto do Marçalo",
+      "nome": "CTbemvindo",
+      "logradouro": "string",
+      "numero": 103,
+      "complemento": "casa",
+      "bairro": "string",
+      "localidade": "string",
       "uf": "string",
-      "cep": "",
-     
-     
+      "cep": "06385270",
+      "status": true,
+      "dataCriacao": "2023-08-01T12:26:53.072Z"
+    
     
   });
 
