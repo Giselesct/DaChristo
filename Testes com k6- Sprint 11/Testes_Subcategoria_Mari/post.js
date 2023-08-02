@@ -14,7 +14,7 @@ export default function () {
     const url = 'https://localhost:7161/SubCategoria';
     const payload = JSON.stringify({
       
-          "nome": "Para Rico ne mari",
+          "nome": "Para pobre ne mari",
           "status": true,
           "dataEHoraCriacao": "2023-07-26T19:55:59.505Z",
           "categoriaId": "22"
