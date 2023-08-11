@@ -16,7 +16,7 @@ export default function () {
   
   const payload = JSON.stringify({
     
-  "nome": 'Do lar',
+  "nome": 'da gigi',
   "status": true,
   "dataCriacao": '2023-07-31T00:52:28.834Z'
   });

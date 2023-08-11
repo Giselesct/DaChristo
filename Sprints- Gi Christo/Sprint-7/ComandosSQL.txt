@@ -1,0 +1,22 @@
+Comandos usados diretamente na tabela para inserir alterar ou excluir dados da API diretamente no SQL:
+
+select* from categorias;
+
+
+
+Para inserir dados:
+
+INSERT INTO categorias (
+Id, Nome, Status, DataEHoraCriacao,DataEHoraModificacao)  VALUES
+("d948cd8c-0b2c-4c19-9453-9aa0efa643fc",'Jogos', 1,current_timestamp(),current_timestamp());
+
+
+Para alterar dados:
+
+UPDATE categorias SET Nome = 'Exótico'
+WHERE  Id = 'd948cd8c-0b2c-4c19-9453-9aa0efa643fc';
+
+
+Para remover dados:
+
+delete from categorias where Id= 'e1fa5d37-01b1-4d31-9211-91cfdd7def76' ;

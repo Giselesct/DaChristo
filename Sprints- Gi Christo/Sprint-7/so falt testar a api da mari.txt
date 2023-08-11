@@ -1,0 +1,13 @@
+so falt testar a api da mari
+
+select* from categorias;
+
+INSERT INTO categorias (
+Id, Nome, Status, DataCriacao,DataModificacao)  VALUES
+("8",'Jogos', 1,current_timestamp(),current_timestamp());
+
+
+UPDATE categorias SET Nome = 'Nenem'
+WHERE  Id = '5';
+
+delete from categorias where Id= '6' ;
