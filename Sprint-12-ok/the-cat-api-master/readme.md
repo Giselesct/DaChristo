@@ -1,3 +1,25 @@
+
+ Neste projeto, inseri testes onde podemos:
+
+
+ Pesquisar:
+     Tipos de Gatos, filtrar por quantidade.
+ Editar: 
+     Alterar dados.
+ Postar:
+     Tentar inserir novos dados.
+ Excluir:
+     Tentar excluir dados da aplicação.
+
+
+Importante: 
+     Esta aplicação, somente nos permite utilizar o comando Get, ou seja, os demais comandos usados como Post,Put e Delete, somente foram utilizados aqui para testar se aplicação está funcionando de acordo com seus acritérios de aceite.
+
+Abaixo mais um resumo detalhado de suas funcionalidades:
+Neste trabalho usei Mocha e Pactum.js.
+
+
+
 # Looking for cat breeds :smile_cat:
 
 This application has the function of presenting a mini API that queries for cat breeds, using the Cat API (https://thecatapi.com). At the same time it caches the search results found in its database.

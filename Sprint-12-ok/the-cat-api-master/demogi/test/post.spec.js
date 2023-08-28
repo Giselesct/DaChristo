@@ -25,14 +25,3 @@ await spec()
   .expectStatus(401);
 });
 
-it('Inserindo gato Mal-criado', async () => {
-  const postRequestBody={
-"nome": 'Gato Mal-criado',
-"status": true,
-"dataCriacao": '2023-07-31T00:52:28.834Z'
-};
-
-await spec()
-  .post('https://api.thecatapi.com/v1/images/search')
-  .expectStatus(401);
-});
