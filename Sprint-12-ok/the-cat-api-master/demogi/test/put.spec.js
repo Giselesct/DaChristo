@@ -21,6 +21,6 @@ it('Editando tipos de Gato', async () => {
 };
 
 await spec()
-  .put('https://api.thecatapi.com/v1/images/search?limit=10')
+  .put('https://api.thecatapi.com/v1/images/search?limit=9')
   .expectStatus(401);
 });

@@ -1,4 +1,6 @@
 
+ 
+ 
  Neste projeto, inseri testes onde podemos:
 
 
@@ -13,7 +15,7 @@
 
 
 Importante: 
-     Esta aplicação, somente nos permite utilizar o comando Get, ou seja, os demais comandos usados como Post,Put e Delete, somente foram utilizados aqui para testar se aplicação está funcionando de acordo com seus acritérios de aceite.
+     Esta aplicação, somente nos permite utilizar o comando Get, ou seja, os demais comandos usados como Post,Put e Delete, somente foram utilizados aqui para testar se aplicação está funcionando de acordo com seus critérios de aceite.
 
 Abaixo mais um resumo detalhado de suas funcionalidades:
 Neste trabalho usei Mocha e Pactum.js.

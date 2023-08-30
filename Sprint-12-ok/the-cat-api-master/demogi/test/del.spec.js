@@ -9,7 +9,7 @@ it('Deletando dados', async () => {
 
 it('Deletando dados ', async () => {
     await spec()
-      .delete('https://api.thecatapi.com/v1/images/search?limit=9')
+      .delete('https://api.thecatapi.com/v1/images/search?limit=8')
       .expectStatus(401);
   });
   
