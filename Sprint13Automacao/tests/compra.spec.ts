@@ -1,6 +1,6 @@
 import {   expect, test } from "@playwright/test";
 
-test('Colocando produto no carrinho',async ({page}) =>{
+test('Conferindo a compra',async ({page}) =>{
     
     await test.step ('login',async ()=> {
 
@@ -9,22 +9,33 @@ test('Colocando produto no carrinho',async ({page}) =>{
     await page.locator('[data-test="password"]').fill('secret_sauce');
     await page.locator('[data-test="login-button"]').click();
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    await page.locator('[class="shopping_cart_link"]').click();
+
+    await page.locator('[data-test="checkout"]').click();
 
     });
 });
 
-
-test('Retirando o  produto no carrinho',async ({page}) =>{
-
+test('Finalizando  a compra',async ({page}) =>{
+    
     await test.step ('login',async ()=> {
 
     await page.goto ('https://www.saucedemo.com/');
     await page.locator('[data-test="username"]').fill('standard_user');
     await page.locator('[data-test="password"]').fill('secret_sauce');
     await page.locator('[data-test="login-button"]').click();
+    
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
-    await page.locator('[data-test="remove-sauce-labs-bike-light"]').click();
+    await page.locator('[class="shopping_cart_link"]').click();
+
+    await page.locator('[data-test="checkout"]').click();
+    await page.locator('[data-test="firstName"]').fill('gigi');
+    await page.locator('[data-test="lastName"]').fill('gigichr');
+    await page.locator('[data-test="postalCode"]').fill('2035');
+
+    await page.locator('[data-test="continue"]').click();
+    await page.locator('[data-test="finish"]').click();
 
     });
-  
 });
+

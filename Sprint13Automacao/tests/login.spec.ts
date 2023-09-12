@@ -1,7 +1,7 @@
 import {   expect, test } from "@playwright/test";
 
 test('O login do usuário feito com sucesso',async ({ page  }) => {
-       await page.goto('https://www.saucedemo.com/');
+        await page.goto('https://www.saucedemo.com/');
         expect(await page.title()).toBe('Swag Labs');
       
         await page.locator('[data-test="username"]').fill('standard_user');
