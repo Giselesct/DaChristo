@@ -11,8 +11,8 @@ test('Conferindo a compra',async ({page}) =>{
     await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
     await page.locator('[class="shopping_cart_link"]').click();
     await page.locator('[data-test="checkout"]').click();
-
-    });
+    await expect(await page.url()).toBe('https://www.saucedemo.com/checkout-step-one.html');
+});
 });
 
 test('Finalizando  a compra',async ({page}) =>{
@@ -34,6 +34,7 @@ test('Finalizando  a compra',async ({page}) =>{
 
     await page.locator('[data-test="continue"]').click();
     await page.locator('[data-test="finish"]').click();
+    await expect(await page.url()).toBe('https://www.saucedemo.com/checkout-complete.html');
 
     });
 });

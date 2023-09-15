@@ -24,7 +24,8 @@ test('O login do usuário feito sem sucesso',async ({ page  }) => {
         await page.locator('[data-test="password"]').fill('revelado_sauce');
 
         await page.locator('[data-test="login-button"]').click();
-        const errorText = await page.getByText('Epic sadface: Epic sadface: Username and password do not match any user in this service');
+        const errorText = await page.getByText(' Epic sadface: Username and password do not match any user in this service');
+        await expect(errorText).toBeVisible();
 
 
 
